@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{97552efb-187b-4703-bd40-f01bf006f2fa}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Addresses.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)BaseController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Command.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)SerialController.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Addresses.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)BaseController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Command.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SerialController.cpp" />
+  </ItemGroup>
+</Project>
