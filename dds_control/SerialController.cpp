@@ -1,4 +1,5 @@
 #include "SerialController.h"
+#include "Command.h"
 
 namespace DdsControl {
 	SerialController::SerialController(void(*writeByte(bool)), void(*csSwitch(bool)))

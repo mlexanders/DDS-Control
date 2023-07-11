@@ -5,6 +5,11 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dds_control", "dds_control\dds_control.vcxitems", "{97552EFB-187B-4703-BD40-F01BF006F2FA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{DCEAACAF-B412-427D-AE0F-14BE0C481464}"
+	ProjectSection(SolutionItems) = preProject
+		ExampleSketch\ExampleSketch.ino = ExampleSketch\ExampleSketch.ino
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

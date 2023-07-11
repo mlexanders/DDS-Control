@@ -1,5 +1,5 @@
 #pragma once
-#include "Comands.h"
+#include "Command.h"
 
 namespace DdsControl {
 	class BaseController
