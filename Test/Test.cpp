@@ -1,8 +1,6 @@
 ﻿#include <iostream>
 #include <SerialController.h>
 #include <Addresses.h>
-#include <Tst.h>
-
 using namespace std;
 
 
@@ -31,6 +29,4 @@ int main()
     short body = Addresses::CH1_dPh0_H;
 
     sc->write(cmd, body);
-
-    Tst *t = new Tst(1);
 }
