@@ -10,11 +10,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 		ExampleSketch\ExampleSketch.ino = ExampleSketch\ExampleSketch.ino
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{B7980249-E7E3-465B-B667-82220DDF4661}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7980249-E7E3-465B-B667-82220DDF4661}.Debug|x64.ActiveCfg = Debug|x64
+		{B7980249-E7E3-465B-B667-82220DDF4661}.Debug|x64.Build.0 = Debug|x64
+		{B7980249-E7E3-465B-B667-82220DDF4661}.Debug|x86.ActiveCfg = Debug|Win32
+		{B7980249-E7E3-465B-B667-82220DDF4661}.Debug|x86.Build.0 = Debug|Win32
+		{B7980249-E7E3-465B-B667-82220DDF4661}.Release|x64.ActiveCfg = Release|x64
+		{B7980249-E7E3-465B-B667-82220DDF4661}.Release|x64.Build.0 = Release|x64
+		{B7980249-E7E3-465B-B667-82220DDF4661}.Release|x86.ActiveCfg = Release|Win32
+		{B7980249-E7E3-465B-B667-82220DDF4661}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9270F7F-271E-4BC8-94EB-526C858A4E03}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		dds_control\dds_control.vcxitems*{97552efb-187b-4703-bd40-f01bf006f2fa}*SharedItemsImports = 9
+		dds_control\dds_control.vcxitems*{b7980249-e7e3-465b-b667-82220ddf4661}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal
