@@ -3,30 +3,31 @@
 #include <Addresses.h>
 using namespace std;
 
-
+int i = 0;
 
 void write(bool bit) {
+    cout << i << ":";
     if (bit)
     {
-        cout << "1";
+        cout << "1\n";
     }
     else
     {
-        cout << "0";
+        cout << "0\n";
     }
+    i++;
 }
 
 void csSwitch(bool bit) {
-    cout << "CS";
+    cout << "CS" << bit << "\n";
 }
 
 SerialController* sc = new SerialController(&write, &csSwitch);
-void (*ptr)(bool) = &write;
 
 int main()
 {
-    Command cmd = Command::NOP;
-    short body = Addresses::CH1_dPh0_H;
+    Command cmd = Command::SETA;
+    short body = Addresses::SWRST;
 
     sc->write(cmd, body);
 }

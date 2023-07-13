@@ -1,34 +1,34 @@
 #include "SerialController.h"
 #include "Command.h"
 
-SerialController::SerialController(void (*writeByte)(bool), void (*csSwitch)(bool))
+SerialController::SerialController(void (*writeBit)(bool), void (*csSwitch)(bool))
 {
-	_writeBytePtr = writeByte;
-	_chipSelectPtr = csSwitch;
+	_writeBit = writeBit;
+	_chipSelect = csSwitch;
 }
 
-void SerialController::writeByte(bool bit)
+void SerialController::writeBit(bool bit)
 {
-	_writeBytePtr(bit);
+	_writeBit(bit);
 }
 
 void SerialController::chipSelectSwitch(bool isActive)
 {
-	_chipSelectPtr(!isActive); // CS активируется при 0, для удобства инверсируем isActive
+	_chipSelect(isActive);
 }
 
 void SerialController::write(Command cmd, unsigned short body)
 {
-	char _cmd = static_cast<char>(cmd);
-
-	for (int i = 8; i > 0; i--)
+	chipSelectSwitch(true);
+	for (int i = 7; i >= 0; i--)
 	{
-		writeByte((_cmd >> i) & 1);
+		_writeBit(cmd.getByte(i));
 	}
-	for (int i = 16; i > 0; i--)
+	for (int i = 15; i >= 0; i--)
 	{
-		writeByte((body >> i) & 1);
+		_writeBit(cmd.getByte(i));
 	}
+	chipSelectSwitch(false);
 }
 
 short SerialController::read(Command cmd, unsigned short body)
