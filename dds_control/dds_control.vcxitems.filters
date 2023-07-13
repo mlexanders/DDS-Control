@@ -5,11 +5,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Addresses.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)BaseController.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Command.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DdsBuilder.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Dds.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)SerialController.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Addresses.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)BaseController.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Command.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DdsBuilder.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Dds.cpp" />
   </ItemGroup>
 </Project>
