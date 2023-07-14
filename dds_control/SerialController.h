@@ -1,14 +1,14 @@
-#pragma once
+п»ї#pragma once
 #include "BaseController.h"
 using Func = void (*)(bool);
 
 class SerialController : public BaseController
 {
 private:
-	Func _writeBit; // Ссылка на функцию, которая которая отправляет бит
+	Func _writeBit; // РЎСЃС‹Р»РєР° РЅР° С„СѓРЅРєС†РёСЋ, РєРѕС‚РѕСЂР°СЏ РєРѕС‚РѕСЂР°СЏ РѕС‚РїСЂР°РІР»СЏРµС‚ Р±РёС‚
 	void writeBit(bool byte);
 
-	Func _chipSelect; // Ссылка на функцию, которая активирует CS для отправки фрейма
+	Func _chipSelect; // РЎСЃС‹Р»РєР° РЅР° С„СѓРЅРєС†РёСЋ, РєРѕС‚РѕСЂР°СЏ Р°РєС‚РёРІРёСЂСѓРµС‚ CS РґР»СЏ РѕС‚РїСЂР°РІРєРё С„СЂРµР№РјР°
 	void chipSelectSwitch(bool byte);
 public:
 	SerialController(void (*writeBit)(bool), void (*csSwitch)(bool));

@@ -33,5 +33,5 @@ void SerialController::write(Command cmd, unsigned short body)
 
 short SerialController::read(Command cmd, unsigned short body)
 {
-	return 0; //TODO: check the returns value
+	return 0; //TODO: NOT IMPLEMENTATION. Check the returns value
 }
