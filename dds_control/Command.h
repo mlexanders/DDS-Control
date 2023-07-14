@@ -1,14 +1,14 @@
-#pragma once
+п»ї#pragma once
 
 class Command {
 private:
 	unsigned char _cmd;
 public:
-	static const unsigned char NOP = 0b00000000;	//Нет операции, data игнорируется
-	static const unsigned char SETA = 0b00010000;	//Запись addr в адресный регистр 
-	static const unsigned char WR = 0b00100000;		//Запись data в регистр по адрессу в адресном простравнстве
-	static const unsigned char WRI = 0b00100000;	//Запись addr в адресный регистр по адресу в адресном регистре с последующей инкрементацией адресного регистра 
-	static const unsigned char SETAFT = 0b00100000;	//Запись addr в адресный регистр с выборкой значения регистра по адресу addr в сдвиговый регистр
+	static const unsigned char NOP = 0b00000000;	//РќРµС‚ РѕРїРµСЂР°С†РёРё, data РёРіРЅРѕСЂРёСЂСѓРµС‚СЃСЏ
+	static const unsigned char SETA = 0b00010000;	//Р—Р°РїРёСЃСЊ addr РІ Р°РґСЂРµСЃРЅС‹Р№ СЂРµРіРёСЃС‚СЂ 
+	static const unsigned char WR = 0b00100000;		//Р—Р°РїРёСЃСЊ data РІ СЂРµРіРёСЃС‚СЂ РїРѕ Р°РґСЂРµСЃСѓ РІ Р°РґСЂРµСЃРЅРѕРј РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ
+	static const unsigned char WRI = 0b00100000;	//Р—Р°РїРёСЃСЊ addr РІ Р°РґСЂРµСЃРЅС‹Р№ СЂРµРіРёСЃС‚СЂ РїРѕ Р°РґСЂРµСЃСѓ РІ Р°РґСЂРµСЃРЅРѕРј СЂРµРіРёСЃС‚СЂРµ СЃ РїРѕСЃР»РµРґСѓСЋС‰РµР№ РёРЅРєСЂРµРјРµРЅС‚Р°С†РёРµР№ Р°РґСЂРµСЃРЅРѕРіРѕ СЂРµРіРёСЃС‚СЂР° 
+	static const unsigned char SETAFT = 0b00100000;	//Р—Р°РїРёСЃСЊ addr РІ Р°РґСЂРµСЃРЅС‹Р№ СЂРµРіРёСЃС‚СЂ СЃ РІС‹Р±РѕСЂРєРѕР№ Р·РЅР°С‡РµРЅРёСЏ СЂРµРіРёСЃС‚СЂР° РїРѕ Р°РґСЂРµСЃСѓ addr РІ СЃРґРІРёРіРѕРІС‹Р№ СЂРµРіРёСЃС‚СЂ
 
 	Command(const unsigned char cmd);
 
