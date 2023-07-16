@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <SerialController.h>
 #include <Addresses.h>
+#include <DdsBuilder.h>
 using namespace std;
 
 
@@ -14,7 +15,9 @@ void clock(bool isActive);
 SerialController* controller = new SerialController(&write, &chipSelect, &clock);
 
 
-void main() {
+int main() {
+    Dds dds = DdsBuilder::useSerialController(&write, &chipSelect, &clock).getDds();
+
     Command cmd = Command::SETA;
     short body = Addresses::SWRST;
 

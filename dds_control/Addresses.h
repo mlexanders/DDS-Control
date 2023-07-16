@@ -65,9 +65,9 @@ public:
 	static const unsigned short CH1_Mul_all = 0x1305;
 	static const unsigned short CH1_Offset_all = 0x1306;
 
-	static const unsigned short CH1_dPh0_L = 0x1400;	//Приращение фазы, канал 1, профиль 0, младшие 16 разрядов - [15:0]
-	static const unsigned short CH1_dPh0_M = 0x1401;	//Приращение фазы, канал 1, профиль 0, разряды [31:16]
-	static const unsigned short CH1_dPh0_H = 0x1402;	//Приращение фазы, канал 1, профиль 0, старшие 16 разрядов - [47:32]
+	static const unsigned short CH1_dPh0_L = 0x1400;	//0x1400 Приращение фазы, канал 1, профиль 0, младшие 16 разрядов - [15:0]
+	static const unsigned short CH1_dPh0_M = 0x1401;	//0x1401 Приращение фазы, канал 1, профиль 0, разряды [31:16]
+	static const unsigned short CH1_dPh0_H = 0x1402;	//0x1402 Приращение фазы, канал 1, профиль 0, старшие 16 разрядов - [47:32]
 
 	static const unsigned short CH1_P0 = 0x1404;		//Смещение фазы синтезируемого сигнала (Φ). value – двоично-дополнительное целое
 	static const unsigned short CH1_Mul0 = 0x1405;		//Амплитуда синтезируемого сигнала (A). A=(mul/2)^12, mul – двоично дополнительное целое -[15:3] 

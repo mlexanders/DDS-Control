@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{B7980249-E7E3-465B-B667-82220DDF4661}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{BDE81C9E-C986-4ACF-92DB-1E72EBEC9124}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DdsBuilderExample", "DdsBuilderExample\DdsBuilderExample.vcxproj", "{8D318020-905E-422E-9E58-0F64FE687524}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -28,14 +32,26 @@ Global
 		{B7980249-E7E3-465B-B667-82220DDF4661}.Release|x64.Build.0 = Release|x64
 		{B7980249-E7E3-465B-B667-82220DDF4661}.Release|x86.ActiveCfg = Release|Win32
 		{B7980249-E7E3-465B-B667-82220DDF4661}.Release|x86.Build.0 = Release|Win32
+		{8D318020-905E-422E-9E58-0F64FE687524}.Debug|x64.ActiveCfg = Debug|x64
+		{8D318020-905E-422E-9E58-0F64FE687524}.Debug|x64.Build.0 = Debug|x64
+		{8D318020-905E-422E-9E58-0F64FE687524}.Debug|x86.ActiveCfg = Debug|Win32
+		{8D318020-905E-422E-9E58-0F64FE687524}.Debug|x86.Build.0 = Debug|Win32
+		{8D318020-905E-422E-9E58-0F64FE687524}.Release|x64.ActiveCfg = Release|x64
+		{8D318020-905E-422E-9E58-0F64FE687524}.Release|x64.Build.0 = Release|x64
+		{8D318020-905E-422E-9E58-0F64FE687524}.Release|x86.ActiveCfg = Release|Win32
+		{8D318020-905E-422E-9E58-0F64FE687524}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D318020-905E-422E-9E58-0F64FE687524} = {BDE81C9E-C986-4ACF-92DB-1E72EBEC9124}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9270F7F-271E-4BC8-94EB-526C858A4E03}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		dds_control\dds_control.vcxitems*{8d318020-905e-422e-9e58-0f64fe687524}*SharedItemsImports = 4
 		dds_control\dds_control.vcxitems*{97552efb-187b-4703-bd40-f01bf006f2fa}*SharedItemsImports = 9
 		dds_control\dds_control.vcxitems*{b7980249-e7e3-465b-b667-82220ddf4661}*SharedItemsImports = 4
 	EndGlobalSection

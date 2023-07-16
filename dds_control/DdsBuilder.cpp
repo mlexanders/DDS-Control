@@ -1,4 +1,5 @@
 #include "DdsBuilder.h"
+#include <Controller.h>
 #include <SerialController.h>
 
 DdsBuilder::DdsBuilder(Controller* controller)
@@ -13,5 +14,5 @@ DdsBuilder DdsBuilder::useSerialController(void (*writeBit)(bool), void (*chipSe
 
 Dds DdsBuilder::getDds()
 {
-    return Dds();
+    return Dds(_controller);
 }
