@@ -85,13 +85,13 @@ public:
 	static const unsigned short CH1_T_dPh_M = 0x1801;
 	static const unsigned short CH1_T_dPh_H = 0x1802;
 
-	static const unsigned short CH1_T_P = 0x1804;
-	static const unsigned short CH1_T_Mul = 0x1805;
-	static const unsigned short CH1_T_Offset = 0x1806;
-	static const unsigned short CH1_T_SEL = 0x1808;
-	static const unsigned short CH1_T_out1 = 0x1810;
-	static const unsigned short CH1_T_out2 = 0x18111; // TODO: warning C4305
-	static const unsigned short CH1_T_out3 = 0x1812;
-	static const unsigned short CH1_T_out4 = 0x1813;
+	//static const unsigned short CH1_T_P = 0x1804;
+	//static const unsigned short CH1_T_Mul = 0x1805;
+	//static const unsigned short CH1_T_Offset = 0x1806;
+	//static const unsigned short CH1_T_SEL = 0x1808;
+	//static const unsigned short CH1_T_out1 = 0x1810;
+	//static const unsigned short CH1_T_out2 = 0x18111; // TODO: warning C4305
+	//static const unsigned short CH1_T_out3 = 0x1812;
+	//static const unsigned short CH1_T_out4 = 0x1813;
 };
 
