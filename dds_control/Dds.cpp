@@ -8,8 +8,19 @@ Dds::Dds(Controller *controller)
 }
 
 int Dds::init()
-{
-    return 0;   //TODO: NOT IMPLEMENTATION.
+{   
+    //_fClock = getFClock(); //получение опорной частоты с МК 
+
+    _controller->write(Command::SETA, Addresses::SEL_REG);
+    _controller->write(Command::WR, _currentProfile);   //Выбор активного профиля синтеза
+    
+    _controller->write(Command::SETA, Addresses::CLR);
+    _controller->write(Command::WR, 0x000F); //TODO: ???
+    
+    _controller->write(Command::SETA, Addresses::CTR); 
+    _controller->write(Command::WR, 0b0001000000000000); //Включение ЦАП-1 
+
+    return 0;
 }
 
 /*------------------------------------------------------------
@@ -22,7 +33,7 @@ freq = 0x 0000 4CCC CCCC CCCD => size: 64bit / 8 byte
 --------------------------------------------------------------*/
 void Dds::setFreq(unsigned long long freq) // Установка частоты [МГц]
 { 
-    double cl = static_cast<double>(freq * 0x1000000000000) / _fClock;
+    double cl = static_cast<double>(freq * 2^48) / _fClock;
     freq = (unsigned long long)cl;
 
     _controller->write(Command::SETA, Addresses::CH1_dPh0_L);
@@ -38,11 +49,13 @@ void Dds::setFreq(unsigned long long freq) // Установка частоты [МГц]
 
 void Dds::setFi(unsigned int fi)     // Установка фазы   [°]
 {
-    //TODO: NOT IMPLEMENTATION. //
+    _controller->write(Command::SETA, Addresses::CH1_Offset0);
+    _controller->write(Command::WR, fi);
 }
 
 
-void Dds::setA(unsigned int a)       // Установка амплитуды [дБ]
+void Dds::setA(unsigned short a)       // Установка амплитуды [дБ]
 {
-    //TODO: NOT IMPLEMENTATION. // use Mul
+    _controller->write(Command::SETA, Addresses::CH1_Mul0);
+    _controller->write(Command::WR, a * 2^12);   // A = mul / 2^12
 }

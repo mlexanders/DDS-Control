@@ -13,7 +13,11 @@ Dds dds = DdsBuilder::useSerialController(&write, &chipSelect, &clock).getDds();
 
 int main()
 {
+    if (dds.init() == 1) return 1;
+
 	dds.setFreq(300);
+    dds.setA(1);
+    dds.setFi(5);
 }
 
 
