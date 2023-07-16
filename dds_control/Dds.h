@@ -1,13 +1,13 @@
-#pragma once
+п»ї#pragma once
 #include <Controller.h>
 
 class Dds
 {
 private:
 	Controller *_controller;
-	int _fClock = 1000; // TODO: получение опорной частоты с МК (1000 примерное значение)
-	int _currentProfile = 0; // TODO: настройка рабочих профилей (0 - по умолчанию) : 0 - 63
-	int _currentChannel = 1; // TODO: выбор канала (1 - по умолчанию) : 1 или 2
+	int _fClock = 1000; // TODO: РїРѕР»СѓС‡РµРЅРёРµ РѕРїРѕСЂРЅРѕР№ С‡Р°СЃС‚РѕС‚С‹ СЃ РњРљ (1000 РїСЂРёРјРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ)
+	int _currentProfile = 0; // TODO: РЅР°СЃС‚СЂРѕР№РєР° СЂР°Р±РѕС‡РёС… РїСЂРѕС„РёР»РµР№ (0 - РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ) : 0 - 63
+	int _currentChannel = 1; // TODO: РІС‹Р±РѕСЂ РєР°РЅР°Р»Р° (1 - РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ) : 1 РёР»Рё 2
 public:
 	Dds(Controller *controller);
 	int init();
