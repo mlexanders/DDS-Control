@@ -90,7 +90,7 @@ public:
 	//static const unsigned short CH1_T_Offset = 0x1806;
 	//static const unsigned short CH1_T_SEL = 0x1808;
 	//static const unsigned short CH1_T_out1 = 0x1810;
-	//static const unsigned short CH1_T_out2 = 0x18111; // TODO: warning C4305
+	//static const unsigned short CH1_T_out2 = 0x18111;
 	//static const unsigned short CH1_T_out3 = 0x1812;
 	//static const unsigned short CH1_T_out4 = 0x1813;
 };
