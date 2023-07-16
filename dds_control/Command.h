@@ -12,6 +12,6 @@ public:
 
 	Command(const unsigned char cmd);
 
-	unsigned char getByte(int i);
+	unsigned char getBit(int i);
 };
 

@@ -1,14 +1,14 @@
 #pragma once
 #include <Dds.h>
-#include <BaseController.h>
+#include <Controller.h>
 
 class DdsBuilder
 {
 private:
-	BaseController *_controller;
-	DdsBuilder(BaseController *controller);
+	Controller *_controller;
+	DdsBuilder(Controller *controller);
 public:
-	static DdsBuilder useSerialController(void (*writeBit)(bool), void (*csSwitch)(bool));
+	static DdsBuilder useSerialController(void (*writeBit)(bool), void (*chipSelect)(bool), void (*clock)(bool));
 	Dds getDds();
 };
 

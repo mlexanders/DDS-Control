@@ -1,6 +1,8 @@
 #pragma once
 class Dds
 {
+private:
+	
 public:
 	Dds();
 	int init();

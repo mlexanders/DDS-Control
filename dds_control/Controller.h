@@ -1,7 +1,7 @@
 #pragma once
 #include "Command.h"
 
-class BaseController
+class Controller
 {
 public:
 	void virtual write(Command cmd, unsigned short body);

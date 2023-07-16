@@ -1,14 +1,14 @@
 #include "DdsBuilder.h"
 #include <SerialController.h>
 
-DdsBuilder::DdsBuilder(BaseController* controller)
+DdsBuilder::DdsBuilder(Controller* controller)
 {
     _controller = controller;
 }
 
-DdsBuilder DdsBuilder::useSerialController(void (*writeBit)(bool), void (*csSwitch)(bool))
+DdsBuilder DdsBuilder::useSerialController(void (*writeBit)(bool), void (*chipSelect)(bool), void (*clock)(bool))
 {
-    return DdsBuilder(new SerialController(writeBit, csSwitch));
+    return DdsBuilder(new SerialController(writeBit, chipSelect, clock));
 }
 
 Dds DdsBuilder::getDds()

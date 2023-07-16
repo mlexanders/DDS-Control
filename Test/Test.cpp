@@ -3,31 +3,42 @@
 #include <Addresses.h>
 using namespace std;
 
+
 int i = 0;
+bool j = true;
 
-void write(bool bit) {
-    cout << i << ":";
-    if (bit)
-    {
-        cout << "1\n";
-    }
-    else
-    {
-        cout << "0\n";
-    }
-    i++;
-}
+void write(bool bit);
+void chipSelect(bool isActive);
+void clock(bool isActive);
 
-void csSwitch(bool bit) {
-    cout << "CS" << bit << "\n";
-}
+SerialController* controller = new SerialController(&write, &chipSelect, &clock);
 
-SerialController* sc = new SerialController(&write, &csSwitch);
 
-int main()
-{
+void main() {
     Command cmd = Command::SETA;
     short body = Addresses::SWRST;
 
-    sc->write(cmd, body);
+    controller->write(cmd, body);
+}
+
+
+void write(bool bit) {
+    cout << i << ":" << bit;
+    i++;
+}
+
+void chipSelect(bool isActive) {
+    cout << "CS\t" << isActive << "\n";
+}
+
+void clock(bool isActive) {
+    if (j)
+    {
+        cout << "clock" << isActive << "\t";
+    }
+    else
+    {
+        cout << "\tclock" << isActive << "\n";
+    }
+    j = !j;
 }
