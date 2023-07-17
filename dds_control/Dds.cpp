@@ -33,8 +33,7 @@ freq = 0x 0000 4CCC CCCC CCCD => size: 64bit / 8 byte
 --------------------------------------------------------------*/
 void Dds::setFreq(unsigned long long freq) // Установка частоты [МГц]
 { 
-    double cl = static_cast<double>(freq * 2^48) / _fClock;
-    freq = (unsigned long long)cl;
+    freq = (_k / _fClock) * freq;
 
     _controller->write(Command::SETA, Addresses::CH1_dPh0_L);
     _controller->write(Command::WR, (freq >> (0 * 16)) & 0xFFFF); // (побитовый сдвиг на i * 16 бит) & (11111111 11111111)

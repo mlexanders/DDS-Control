@@ -9,7 +9,7 @@ public:
 	static const unsigned short SEL_REG = 0x0002;			//Выбор активного профиля синтеза
 	static const unsigned short CTR = 0x0003;
 	static const unsigned short SYNC = 0x0004;
-	static const unsigned short CLR = 0x0005;
+	static const unsigned short CLR = 0x0005;				//Управление очисткой аккумуляторов фазы и запуск/остановка ЛЧМ
 	static const unsigned short LINK = 0x0006;
 	static const unsigned short ROUTE = 0x0007;
 	static const unsigned short TC_L = 0x0008;
