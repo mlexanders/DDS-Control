@@ -31,22 +31,28 @@ freq = 0x 0000 4CCC CCCC CCCD => size: 64bit / 8 byte
     => Ch x _dPh y _H   =   0x4CCC,     - [32; 47] bits - 2th 
     * USES ONLY 48 bit [0; 47]
 --------------------------------------------------------------*/
-void Dds::setFreq(unsigned long long freq) // Установка частоты [МГц]
+void Dds::setFreq(unsigned int clock) // Установка частоты [МГц]
 { 
-    freq = (_k / _fClock) * freq;
+    static const unsigned long CONSTANT_VALUE = 0xFFFF0000;
+    unsigned short result[3]{};
+    unsigned long buffer = CONSTANT_VALUE * (clock / _baseClock);
+
+    result[2] = (buffer >> 16) & 0xFFFF;
+    result[1] = (buffer | (buffer << 16)) >> 16 & 0xFFFF;
+    result[0] = result[1] + 1;
 
     _controller->write(Command::SETA, Addresses::CH1_dPh0_L);
-    _controller->write(Command::WR, (freq >> (0 * 16)) & 0xFFFF); // (побитовый сдвиг на i * 16 бит) & (11111111 11111111)
+    _controller->write(Command::WR, result[0]); 
 
     _controller->write(Command::SETA, Addresses::CH1_dPh0_M);
-    _controller->write(Command::WR, (freq >> (1 * 16)) & 0xFFFF);
+    _controller->write(Command::WR, result[1]);
 
     _controller->write(Command::SETA, Addresses::CH1_dPh0_H);
-    _controller->write(Command::WR, (freq >> (2 * 16)) & 0xFFFF);
+    _controller->write(Command::WR, result[2]);
 }
 
 
-void Dds::setFi(unsigned int fi)     // Установка фазы   [°]
+void Dds::setFi(unsigned short fi)     // Установка фазы   [°]
 {
     _controller->write(Command::SETA, Addresses::CH1_Offset0);
     _controller->write(Command::WR, fi);
@@ -56,5 +62,5 @@ void Dds::setFi(unsigned int fi)     // Установка фазы   [°]
 void Dds::setA(unsigned short a)       // Установка амплитуды [дБ]
 {
     _controller->write(Command::SETA, Addresses::CH1_Mul0);
-    _controller->write(Command::WR, a * 2^12);   // A = mul / 2^12
+    _controller->write(Command::WR, a );   // A = mul / 2^12
 }
