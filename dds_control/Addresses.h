@@ -77,10 +77,6 @@ public:
 	static const unsigned short CH1_dPy_M = 0x1411;
 	static const unsigned short CH1_dPy_H = 0x1412;
 
-	//static const unsigned short CH1_Py = 0x1413;
-	//static const unsigned short CH1_Muly = 0x1414;
-	//static const unsigned short CH1_Offsety = 0x1414; // 17F6 ???
-
 	static const unsigned short CH1_T_dPh_L = 0x1800;
 	static const unsigned short CH1_T_dPh_M = 0x1801;
 	static const unsigned short CH1_T_dPh_H = 0x1802;

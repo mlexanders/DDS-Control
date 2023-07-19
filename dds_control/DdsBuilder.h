@@ -10,6 +10,6 @@ private:
 	DdsBuilder(Controller* controller);
 public:
 	static DdsBuilder useSerialController(void (*writeBit)(bool), void (*chipSelect)(bool), void (*clock)(bool));
-	Dds getDds();
+	Dds* getDds();
 };
 

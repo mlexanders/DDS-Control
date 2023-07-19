@@ -12,7 +12,7 @@ DdsBuilder DdsBuilder::useSerialController(void (*writeBit)(bool), void (*chipSe
     return DdsBuilder(new SerialController(writeBit, chipSelect, clock));
 }
 
-Dds DdsBuilder::getDds()
+Dds* DdsBuilder::getDds()
 {
-    return Dds(_controller);
+    return new Dds(_controller);
 }

@@ -4,7 +4,7 @@
 class Controller
 {
 public:
-	void virtual write(Command cmd, unsigned short body);
-	short virtual read(Command cmd, unsigned short body);
+	void virtual write(const unsigned char cmd, unsigned short body);
+	short virtual read(const unsigned char cmd, unsigned short body);
 };
 
