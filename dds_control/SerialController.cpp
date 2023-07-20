@@ -6,24 +6,25 @@ SerialController::SerialController(void (*writeBit)(bool), void (*chipSelect)(bo
 	_writeBit = writeBit;
 	_chipSelect = chipSelect;
 	_clock = clock;
+	_chipSelect(false);
 }
 
 void SerialController::write(const unsigned char cmd, unsigned short body)
 {
-	_chipSelect(true);
+	_chipSelect(false);
 	for (int i = 7; i >= 0; i--)
 	{
-		_clock(true);
-		_writeBit((cmd>> i) & 1);
 		_clock(false);
+		_writeBit((cmd>> i) & 1);
+		_clock(true);
 	}
 	for (int i = 15; i >= 0; i--)
 	{
-		_clock(true);
-		_writeBit((body >> i) & 1);
 		_clock(false);
+		_writeBit((body >> i) & 1);
+		_clock(true);
 	}
-	_chipSelect(false);
+	_chipSelect(true);
 }
 
 short SerialController::read(const unsigned char cmd, unsigned short body)
