@@ -11,6 +11,7 @@ private:
 	static const unsigned long CONSTANT_VALUE = 0xFFFF0000;
 public:
 	Dds(Controller *controller);
+	~Dds();
 	int init();	//Включение ЦАП, установка рабочего профиля и канала;
 	void setFreq(unsigned int clock);	// Установка частоты
 	void setFi(unsigned short fi);			//Установка фазы fi

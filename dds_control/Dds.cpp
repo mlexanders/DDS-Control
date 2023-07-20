@@ -7,6 +7,10 @@ Dds::Dds(Controller *controller)
     _controller = controller;
 }
 
+Dds::~Dds() {
+    delete _controller;
+}
+
 int Dds::init()
 {   
     _controller->write(Command::SETA, Addresses::SEL_REG);

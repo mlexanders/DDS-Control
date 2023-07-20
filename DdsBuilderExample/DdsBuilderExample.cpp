@@ -8,8 +8,6 @@ using namespace std;
 
 #ifdef _DEBUG
 #define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
-// Replace _NORMAL_BLOCK with _CLIENT_BLOCK if you want the
-// allocations to be of _CLIENT_BLOCK type
 #else
 #define DBG_NEW new
 #endif
@@ -25,9 +23,6 @@ Dds *dds = DdsBuilder::useSerialController(&write, &chipSelect, &clock).getDds()
 
 int main()
 {
-    _CrtMemState s1;
-    _CrtMemCheckpoint(&s1);
-
     if (dds->init() == 1) return 1;
 
     dds->setFreq(300);
@@ -36,7 +31,7 @@ int main()
     dds->setA(1);
     dds->setFi(5);
 
-   
+    delete dds;
     _CrtDumpMemoryLeaks();
     return 0;
 }

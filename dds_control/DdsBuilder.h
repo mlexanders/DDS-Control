@@ -6,7 +6,7 @@
 class DdsBuilder
 {
 private:
-	Controller* _controller;
+	Dds* _dds;
 	DdsBuilder(Controller* controller);
 public:
 	static DdsBuilder useSerialController(void (*writeBit)(bool), void (*chipSelect)(bool), void (*clock)(bool));
