@@ -29,5 +29,7 @@ void SerialController::write(const unsigned char cmd, unsigned short body)
 
 short SerialController::read(const unsigned char cmd, unsigned short body)
 {
-	return 0; //TODO: NOT IMPLEMENTATION.
+	return 0;
 }
+
+

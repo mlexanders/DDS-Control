@@ -14,6 +14,10 @@ int dataPin = 51;   //SDI   - 2
 int clockPin = 52;  //SCK   - 1
 int csPin = 53;     //SCSn  - 0
 
+//int dataPin = 13;   //SDI   - 5
+//int clockPin = 10;  //SCK   - 2
+//int csPin = 11;     //SCSn  - 3
+
 void _SDI(bool _bit);  //SDI
 void _CLK(bool _bit);  //SCK
 void _SCS(bool _bit);  //SCSn
@@ -21,33 +25,38 @@ void _SCS(bool _bit);  //SCSn
 Dds *dds = DdsBuilder::useSerialController(&_SDI, &_SCS, &_CLK).getDds();
 
 void setup() {
-  Serial.begin(9600);
+  //Serial.begin(9600);
   PORTB = 0b00000000;
   // init pins
   pinMode(dataPin, OUTPUT);
   pinMode(clockPin, OUTPUT);
   pinMode(csPin, OUTPUT);
-  dds->init();
+  // DDRB = 0b00101100;
+  // dds->init();
+  //  dds->setFreq(300);
+  //dds->setA(0b11111111111000);
 }
 
 
 void loop() {
+  dds->init();
   dds->setFreq(300);
-  dds->setFreq(120);
-  dds->setFreq(22);
+  //delay(1000);
+  dds->setA(0.3);
+  delay(1000);
+  //dds->setA(0.2);
 }
-
 
 void _SDI(bool _bit) {
   setBit(2, _bit);
 }
 
 void _SCS(bool _bit) {
-  setBit(1, _bit);
+  setBit(0, _bit);
 }
 
 void _CLK(bool _bit) {
-  setBit(0, _bit);
+  setBit(1, _bit);
 }
 
 //Установка i-го бита в значение val
