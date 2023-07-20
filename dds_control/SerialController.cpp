@@ -8,25 +8,25 @@ SerialController::SerialController(void (*writeBit)(bool), void (*chipSelect)(bo
 	_clock = clock;
 }
 
-void SerialController::write(Command cmd, unsigned short body)
+void SerialController::write(const unsigned char cmd, unsigned short body)
 {
 	_chipSelect(true);
 	for (int i = 7; i >= 0; i--)
 	{
 		_clock(true);
-		_writeBit(cmd.getBit(i));
+		_writeBit((cmd>> i) & 1);
 		_clock(false);
 	}
 	for (int i = 15; i >= 0; i--)
 	{
 		_clock(true);
-		_writeBit((body >> i) & 1); 	// TODO: change to getBit
+		_writeBit((body >> i) & 1);
 		_clock(false);
 	}
 	_chipSelect(false);
 }
 
-short SerialController::read(Command cmd, unsigned short body)
+short SerialController::read(const unsigned char cmd, unsigned short body)
 {
-	return 0; //TODO: NOT IMPLEMENTATION. Check the returns value
+	return 0; //TODO: NOT IMPLEMENTATION.
 }

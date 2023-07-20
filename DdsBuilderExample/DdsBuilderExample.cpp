@@ -2,6 +2,16 @@
 #include <DdsBuilder.h>
 using namespace std;
 
+#define _CRTDBG_MAP_ALLOC
+#include <cstdlib>
+#include <crtdbg.h>
+
+#ifdef _DEBUG
+#define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
+#else
+#define DBG_NEW new
+#endif
+
 int i = 0;
 bool j = 1;
 
@@ -9,7 +19,7 @@ void write(bool bit);   //SDI
 void chipSelect(bool isActive); //SCSn
 void clock(bool isActive);  //SCK
 
-Dds dds = DdsBuilder::useSerialController(&write, &chipSelect, &clock).getDds();
+Dds *dds = DdsBuilder::useSerialController(&write, &chipSelect, &clock).getDds();
 
 int main()
 {

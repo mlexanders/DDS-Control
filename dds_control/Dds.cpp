@@ -7,15 +7,17 @@ Dds::Dds(Controller *controller)
     _controller = controller;
 }
 
+Dds::~Dds() {
+    delete _controller;
+}
+
 int Dds::init()
 {   
-    //_fClock = getFClock(); //получение опорной частоты с МК 
-
     _controller->write(Command::SETA, Addresses::SEL_REG);
     _controller->write(Command::WR, _currentProfile);   //Выбор активного профиля синтеза
     
     _controller->write(Command::SETA, Addresses::CLR);
-    _controller->write(Command::WR, 0x000F); //TODO: ???
+    _controller->write(Command::WR, 0x000F);
     
     _controller->write(Command::SETA, Addresses::CTR); 
     _controller->write(Command::WR, 0b0001000000000000); //Включение ЦАП-1 
@@ -33,7 +35,6 @@ freq = 0x 0000 4CCC CCCC CCCD => size: 64bit / 8 byte
 --------------------------------------------------------------*/
 void Dds::setFreq(unsigned int clock) // Установка частоты [МГц]
 { 
-    static const unsigned long CONSTANT_VALUE = 0xFFFF0000;
     unsigned short result[3]{};
     unsigned long buffer = CONSTANT_VALUE * (clock / _baseClock);
 

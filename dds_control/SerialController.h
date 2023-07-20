@@ -11,7 +11,7 @@ private:
 public:
 	SerialController(void (*writeBit)(bool), void (*csSwitch)(bool), void (*clock)(bool));
 
-	void write(Command cmd, unsigned short body);
-	short read(Command cmd, unsigned short body);
+	void write(const unsigned char cmd, unsigned short body);
+	short read(const unsigned char cmd, unsigned short body);
 };
 

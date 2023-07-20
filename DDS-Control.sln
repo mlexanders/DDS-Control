@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{BDE81C9E-C986-4ACF-92DB-1E72EBEC9124}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DdsBuilderExample", "DdsBuilderExample\DdsBuilderExample.vcxproj", "{8D318020-905E-422E-9E58-0F64FE687524}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example", "DdsBuilderExample\DdsBuilderExample.vcxproj", "{8D318020-905E-422E-9E58-0F64FE687524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
